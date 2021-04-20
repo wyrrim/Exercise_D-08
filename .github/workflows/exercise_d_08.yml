@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  BUILD: # an arbitrary name of the job
     runs-on: ubuntu-latest
 
     steps:
