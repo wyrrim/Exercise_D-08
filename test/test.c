@@ -22,6 +22,11 @@ void test_subtract_int(void)
     TEST_ASSERT_EQUAL_INT(-6, arithmetic_subtract_int(23, 29));
 }
 
+void test_subtract_double(void)
+{
+    TEST_ASSERT_EQUAL_DOUBLE(-177., arithmetic_subtract_double(13., 19.e1));
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -29,6 +34,7 @@ int main(void)
     RUN_TEST(test_add_int);
     RUN_TEST(test_add_double);
     RUN_TEST(test_subtract_int);
+    RUN_TEST(test_subtract_double);
 
     return UNITY_END();
 }
