@@ -28,4 +28,10 @@ int arithmetic_min_int(const int x, const int y);
 
 double arithmetic_min_double(const double x, const double y);
 
+int arithmetic_average_int(const int x, const int y);
+
+double arithmetic_average_double(const double x, const double y);
+
+int arithmetic_average_int_arr(const int *x, const int n_arr);
+
 #endif /*ARITHMETIC_H*/
