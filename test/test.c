@@ -74,6 +74,36 @@ void test_min_double(void)
     TEST_ASSERT_EQUAL_DOUBLE(-2.5, arithmetic_min_double(-2.5, -1.4));
 }
 
+void test_average_int(void)
+{
+    TEST_ASSERT_EQUAL_INT(-4, arithmetic_average_int(-13, 4));
+}
+
+void test_average_double(void)
+{
+    TEST_ASSERT_EQUAL_DOUBLE(-0.55, arithmetic_average_double(-2.5, 1.4));
+}
+
+void test_average_int_arr(void)
+{
+    int arr[] = {-3, 4, -2, 6, 9};
+    int brr[] = {-3, 5, -2, 6, 9};
+    int crr[] = {-3, 4, -1, 7, 9};
+    TEST_ASSERT_EQUAL_INT(3, arithmetic_average_int_arr(arr, 5));
+    TEST_ASSERT_EQUAL_INT(3, arithmetic_average_int_arr(brr, 5));
+    TEST_ASSERT_EQUAL_INT(3, arithmetic_average_int_arr(crr, 5));
+}
+
+void test_average_int_arr_negative(void)
+{
+    int arr[] = {3, -4, 2, -6, -9};
+    int brr[] = {3, -5, 2, -6, -9};
+    int crr[] = {3, -4, 1, -7, -9};
+    TEST_ASSERT_EQUAL_INT(-3, arithmetic_average_int_arr(arr, 5));
+    TEST_ASSERT_EQUAL_INT(-3, arithmetic_average_int_arr(brr, 5));
+    TEST_ASSERT_EQUAL_INT(-3, arithmetic_average_int_arr(crr, 5));
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -90,6 +120,10 @@ int main(void)
     RUN_TEST(test_max_double);
     RUN_TEST(test_min_int);
     RUN_TEST(test_min_double);
+    RUN_TEST(test_average_int);
+    RUN_TEST(test_average_double);
+    RUN_TEST(test_average_int_arr);
+    RUN_TEST(test_average_int_arr_negative);
 
     return UNITY_END();
 }
