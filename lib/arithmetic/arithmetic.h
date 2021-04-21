@@ -20,4 +20,12 @@ int arithmetic_div_int(const int x, const int y);
 
 double arithmetic_div_double(const double x, const double y);
 
+int arithmetic_max_int(const int x, const int y);
+
+double arithmetic_max_double(const double x, const double y);
+
+int arithmetic_min_int(const int x, const int y);
+
+double arithmetic_min_double(const double x, const double y);
+
 #endif /*ARITHMETIC_H*/
