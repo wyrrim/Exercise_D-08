@@ -54,6 +54,26 @@ void test_div_double(void)
     TEST_ASSERT_EQUAL_DOUBLE(-DBL_MAX, arithmetic_div_double(-2.5, 0.));
 }
 
+void test_max_int(void)
+{
+    TEST_ASSERT_EQUAL_INT(13, arithmetic_max_int(13, -3));
+}
+
+void test_max_double(void)
+{
+    TEST_ASSERT_EQUAL_DOUBLE(2.5, arithmetic_max_double(2.5, -1.4));
+}
+
+void test_min_int(void)
+{
+    TEST_ASSERT_EQUAL_INT(-13, arithmetic_min_int(-13, -3));
+}
+
+void test_min_double(void)
+{
+    TEST_ASSERT_EQUAL_DOUBLE(-2.5, arithmetic_min_double(-2.5, -1.4));
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -63,8 +83,13 @@ int main(void)
     RUN_TEST(test_subtract_int);
     RUN_TEST(test_subtract_double);
     RUN_TEST(test_mult_int);
+    RUN_TEST(test_mult_double);
     RUN_TEST(test_div_int);
     RUN_TEST(test_div_double);
+    RUN_TEST(test_max_int);
+    RUN_TEST(test_max_double);
+    RUN_TEST(test_min_int);
+    RUN_TEST(test_min_double);
 
     return UNITY_END();
 }

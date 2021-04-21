@@ -39,3 +39,23 @@ double arithmetic_div_double(const double x, const double y)
 {
     return y ? x / y : (x >= 0 ? DBL_MAX : -DBL_MAX);
 }
+
+int arithmetic_max_int(const int x, const int y)
+{
+    return x > y ? x : y;
+}
+
+double arithmetic_max_double(const double x, const double y)
+{
+    return x > y ? x : y;
+}
+
+int arithmetic_min_int(const int x, const int y)
+{
+    return x < y ? x : y;
+}
+
+double arithmetic_min_double(const double x, const double y)
+{
+    return x < y ? x : y;
+}
