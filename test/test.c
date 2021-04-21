@@ -1,6 +1,9 @@
 //#define UNITY_INCLUDE_DOUBLE
 //#undef UNITY_EXCLUDE_DOUBLE
 
+//#include <float.h>
+//#include <limits.h>
+
 #include "unity.h"
 #include "arithmetic.h"
 
@@ -37,6 +40,20 @@ void test_mult_double(void)
     TEST_ASSERT_EQUAL_DOUBLE(-3.5, arithmetic_mult_double(2.5, -1.4));
 }
 
+void test_div_int(void)
+{
+    TEST_ASSERT_EQUAL_INT(-6, arithmetic_div_int(20, -3));
+    TEST_ASSERT_EQUAL_INT(INT_MAX, arithmetic_div_int(13, 0));
+    TEST_ASSERT_EQUAL_INT(INT_MIN, arithmetic_div_int(-13, 0));
+}
+
+void test_div_double(void)
+{
+    TEST_ASSERT_EQUAL_DOUBLE(-1.5625, arithmetic_div_double(2.5, -1.6));
+    TEST_ASSERT_EQUAL_DOUBLE(DBL_MAX, arithmetic_div_double(2.5, 0.));
+    TEST_ASSERT_EQUAL_DOUBLE(-DBL_MAX, arithmetic_div_double(-2.5, 0.));
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -46,7 +63,8 @@ int main(void)
     RUN_TEST(test_subtract_int);
     RUN_TEST(test_subtract_double);
     RUN_TEST(test_mult_int);
-    RUN_TEST(test_mult_double);
+    RUN_TEST(test_div_int);
+    RUN_TEST(test_div_double);
 
     return UNITY_END();
 }
