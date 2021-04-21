@@ -14,3 +14,8 @@ int arithmetic_subtract_int(const int x, const int y)
 {
     return x - y;
 }
+
+int arithmetic_subtract_double(const double x, const double y)
+{
+    return x - y;
+}
