@@ -34,4 +34,6 @@ double arithmetic_average_double(const double x, const double y);
 
 int arithmetic_average_int_arr(const int *x, const int n_arr);
 
+void arithmetic_sort_ascending(const int *x, const int n_arr);
+
 #endif /*ARITHMETIC_H*/

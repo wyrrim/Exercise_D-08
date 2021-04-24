@@ -89,9 +89,13 @@ void test_average_int_arr(void)
     int arr[] = {-3, 4, -2, 6, 9};
     int brr[] = {-3, 5, -2, 6, 9};
     int crr[] = {-3, 4, -1, 7, 9};
+    int drr[] = {-3, 4, -1, 8, 9};
+    int frr[] = {-3, 4, -1, 9, 9};
     TEST_ASSERT_EQUAL_INT(3, arithmetic_average_int_arr(arr, 5));
     TEST_ASSERT_EQUAL_INT(3, arithmetic_average_int_arr(brr, 5));
     TEST_ASSERT_EQUAL_INT(3, arithmetic_average_int_arr(crr, 5));
+    TEST_ASSERT_EQUAL_INT(3, arithmetic_average_int_arr(drr, 5));
+    TEST_ASSERT_EQUAL_INT(4, arithmetic_average_int_arr(frr, 5));
 }
 
 void test_average_int_arr_negative(void)
@@ -99,9 +103,13 @@ void test_average_int_arr_negative(void)
     int arr[] = {3, -4, 2, -6, -9};
     int brr[] = {3, -5, 2, -6, -9};
     int crr[] = {3, -4, 1, -7, -9};
+    int drr[] = {3, -4, 1, -8, -9};
+    int frr[] = {3, -4, 1, -9, -9};
     TEST_ASSERT_EQUAL_INT(-3, arithmetic_average_int_arr(arr, 5));
     TEST_ASSERT_EQUAL_INT(-3, arithmetic_average_int_arr(brr, 5));
     TEST_ASSERT_EQUAL_INT(-3, arithmetic_average_int_arr(crr, 5));
+    TEST_ASSERT_EQUAL_INT(-3, arithmetic_average_int_arr(drr, 5));
+    TEST_ASSERT_EQUAL_INT(-4, arithmetic_average_int_arr(frr, 5));
 }
 
 int main(void)
