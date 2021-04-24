@@ -81,14 +81,9 @@ int arithmetic_average_int_arr(const int *x, const int n_arr)
         average += x[i];
     }
 
-    if (average > 0)
-    {
-        return average % n_arr > n_arr / 2 ? average / n_arr + 1 : average / n_arr;
-    }
-    else
-    {
-        return -(-average % n_arr > n_arr / 2 ? -average / n_arr + 1 : -average / n_arr);
-    }
+    return (average + (average > 0 ? n_arr : -n_arr) / 2) / n_arr;
+}
 
-    //return average % n_arr > n_arr / 2 ? average / n_arr + 1 : average / n_arr;
+void arithmetic_sort_ascending(const int *x, const int n_arr)
+{
 }
