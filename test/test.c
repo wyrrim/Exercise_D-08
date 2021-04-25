@@ -112,6 +112,21 @@ void test_average_int_arr_negative(void)
     TEST_ASSERT_EQUAL_INT(-4, arithmetic_average_int_arr(frr, 5));
 }
 
+void test_sort_asc_int(void)
+{
+    int arr[] = {3, 9, 2, 0, 5, 8, 1, 7, 4, 6};
+    int arr_sorted_asc[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    arithmetic_sort_ascending(arr, 10);
+    TEST_ASSERT_EQUAL_INT_ARRAY(arr_sorted_asc, arr, 10);
+}
+void test_sort_desc_int(void)
+{
+    int brr[] = {3, 9, 2, 0, 5, 8, 1, 7, 4, 6};
+    int arr_sorted_desc[] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+    arithmetic_sort_descending(brr, 10);
+    TEST_ASSERT_EQUAL_INT_ARRAY(arr_sorted_desc, brr, 10);
+}
+
 int main(void)
 {
     UNITY_BEGIN();
@@ -132,6 +147,8 @@ int main(void)
     RUN_TEST(test_average_double);
     RUN_TEST(test_average_int_arr);
     RUN_TEST(test_average_int_arr_negative);
+    RUN_TEST(test_sort_asc_int);
+    RUN_TEST(test_sort_desc_int);
 
     return UNITY_END();
 }
