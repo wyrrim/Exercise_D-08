@@ -83,14 +83,23 @@ int arithmetic_average_int_arr(const int *x, const int n_arr)
     return (average + (average > 0 ? n_arr : -n_arr) / 2) / n_arr;
 }
 
-void arithmetic_sort_ascending(int *x, const int n_arr)
+void arithmetic_sort_ascending(int *arr, const int n_arr)
 {
-    (void)quicksort(x, n_arr, compare_asc);
+    (void)quicksort(arr, n_arr, compare_asc);
 }
 
-void arithmetic_sort_descending(int *x, const int n_arr)
+void arithmetic_sort_descending(int *arr, const int n_arr)
 {
-    (void)quicksort(x, n_arr, compare_desc);
+    (void)quicksort(arr, n_arr, compare_desc);
+}
+
+bool arithmetic_if_in_arr(int x, const int *arr, const int n_arr)
+{
+    int i = 0;
+    while (x != arr[i] && i++ < n_arr)
+        ;
+
+    return i < n_arr;
 }
 
 ////////////////////////////////////////////////////////////////
