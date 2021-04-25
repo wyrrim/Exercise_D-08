@@ -119,12 +119,21 @@ void test_sort_asc_int(void)
     arithmetic_sort_ascending(arr, 10);
     TEST_ASSERT_EQUAL_INT_ARRAY(arr_sorted_asc, arr, 10);
 }
+
 void test_sort_desc_int(void)
 {
-    int brr[] = {3, 9, 2, 0, 5, 8, 1, 7, 4, 6};
+    int arr[] = {3, 9, 2, 0, 5, 8, 1, 7, 4, 6};
     int arr_sorted_desc[] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-    arithmetic_sort_descending(brr, 10);
-    TEST_ASSERT_EQUAL_INT_ARRAY(arr_sorted_desc, brr, 10);
+    arithmetic_sort_descending(arr, 10);
+    TEST_ASSERT_EQUAL_INT_ARRAY(arr_sorted_desc, arr, 10);
+}
+
+void test_if_in_arr(void)
+{
+    int arr[] = {3, -9, 2, 0, -5, -8, 1, 7, -4, 6};
+    TEST_ASSERT_TRUE(arithmetic_if_in_arr(1, arr, 10));
+    TEST_ASSERT_TRUE(arithmetic_if_in_arr(6, arr, 10));
+    TEST_ASSERT_FALSE(arithmetic_if_in_arr(-1, arr, 10));
 }
 
 int main(void)
@@ -149,6 +158,7 @@ int main(void)
     RUN_TEST(test_average_int_arr_negative);
     RUN_TEST(test_sort_asc_int);
     RUN_TEST(test_sort_desc_int);
+    RUN_TEST(test_if_in_arr);
 
     return UNITY_END();
 }

@@ -47,11 +47,13 @@ int arithmetic_average_int(const int x, const int y);
 
 double arithmetic_average_double(const double x, const double y);
 
-int arithmetic_average_int_arr(const int *x, const int n_arr);
+int arithmetic_average_int_arr(const int *arr, const int n_arr);
 
-void arithmetic_sort_ascending(int *x, const int n_arr);
+void arithmetic_sort_ascending(int *arr, const int n_arr);
 
-void arithmetic_sort_descending(int *x, const int n_arr);
+void arithmetic_sort_descending(int *arr, const int n_arr);
+
+bool arithmetic_if_in_arr(int x, const int *arr, const int n_arr);
 
 void swap_int(int *pnt1, int *pnt2);
 bool compare_asc(int a, int b);
